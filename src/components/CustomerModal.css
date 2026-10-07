@@ -1,0 +1,48 @@
+/* CustomerModal riêng */
+.cm-top {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  margin-bottom: 14px;
+}
+.cm-avatar {
+  width: 62px;
+  height: 62px;
+  flex: none;
+  border-radius: 12px;
+  background: #dcebfb;
+  color: #2f86e0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cm-field { min-width: 0; }
+.cm-name-input::placeholder { color: #e02424; opacity: 0.75; }
+
+.cm-grid {
+  display: grid;
+  gap: 14px;
+  margin-bottom: 14px;
+}
+.cm-grid:last-child { margin-bottom: 0; }
+.cm-grid-3 { grid-template-columns: 1fr 1fr 1fr; }
+.cm-grid-2 { grid-template-columns: 1fr 1fr; }
+
+.cm-date { position: relative; }
+.cm-date .kv-input { padding-right: 32px; }
+.cm-date > svg {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-2);
+  pointer-events: none;
+}
+
+.cm-ph { color: var(--input-ph); }
+.cm-ph option { color: var(--text); }
+
+@media (max-width: 640px) {
+  .cm-grid-3, .cm-grid-2 { grid-template-columns: 1fr; }
+  .cm-top { flex-wrap: wrap; }
+}

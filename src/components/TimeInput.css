@@ -1,0 +1,21 @@
+.ti-wrap { position: relative; display: inline-flex; align-items: center; }
+.ti-wrap .ti-input { padding-right: 32px; width: 100%; }
+.ti-clock {
+  position: absolute; right: 4px; top: 50%; transform: translateY(-50%);
+  background: none; border: none; cursor: pointer; color: var(--muted-2);
+  padding: 5px; border-radius: 6px; display: inline-flex;
+}
+.ti-clock:hover { background: #eef1f5; color: var(--text); }
+.ti-drop {
+  position: absolute; top: calc(100% + 6px); left: 0; z-index: 160;
+  background: #fff; border: 1px solid var(--border-soft); border-radius: 10px;
+  box-shadow: var(--shadow-pop); max-height: 220px; overflow-y: auto;
+  min-width: 110px; padding: 5px;
+}
+.ti-opt {
+  display: block; width: 100%; text-align: left;
+  background: none; border: none; padding: 7px 12px; border-radius: 6px;
+  font-size: 13px; color: var(--text-2); cursor: pointer; font-family: var(--font);
+}
+.ti-opt:hover { background: #f2f5f9; }
+.ti-opt.sel { background: var(--kv-blue-light); color: var(--kv-blue); font-weight: 600; }

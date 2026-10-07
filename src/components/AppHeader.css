@@ -1,0 +1,370 @@
+.akh {
+  --kv-blue: #0f6cde;
+  background: var(--kv-blue);
+  height: 56px;
+  display: flex;
+  align-items: center;
+  padding: 0 14px;
+  gap: 10px;
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  color: #fff;
+  font-family: inherit;
+}
+
+.akh-burger {
+  display: none;
+  border: none;
+  background: rgba(255, 255, 255, 0.14);
+  color: #fff;
+  border-radius: 8px;
+  width: 36px;
+  height: 36px;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.akh-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+.akh-logo-text {
+  font-weight: 800;
+  font-size: 17px;
+  letter-spacing: -0.2px;
+  white-space: nowrap;
+}
+
+/* ---------- nav ---------- */
+.akh-nav {
+  display: flex;
+  align-self: stretch;
+  align-items: stretch;
+  flex: 1;
+  min-width: 0;
+}
+/* icon trong header/dropdown: không co, không rớt hàng */
+.akh-nav-btn svg,
+.akh-user-row svg,
+.akh-row-right svg,
+.akh-panel-item svg,
+.akh-branch-btn svg,
+.akh-pos-btn svg {
+  flex-shrink: 0;
+  display: block;
+}
+.akh-measure {
+  position: absolute;
+  visibility: hidden;
+  pointer-events: none;
+  white-space: nowrap;
+  top: 0;
+  left: 0;
+}
+.akh-nav-item {
+  position: relative;
+  display: flex;
+  align-items: stretch;
+  flex-shrink: 0;
+}
+.akh-nav-btn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 0 11px;
+  cursor: pointer;
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 13.5px;
+  font-weight: 500;
+  white-space: nowrap;
+  background: transparent;
+  border: none;
+  font-family: inherit;
+}
+.akh-nav-item:hover .akh-nav-btn,
+.akh-nav-item.open .akh-nav-btn {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.12);
+}
+.akh-nav-item.active .akh-nav-btn {
+  color: #fff;
+  font-weight: 700;
+}
+.akh-nav-underline {
+  position: absolute;
+  left: 10px;
+  right: 10px;
+  bottom: 0;
+  height: 2.5px;
+  background: #fff;
+  border-radius: 2px;
+  pointer-events: none;
+}
+
+/* ---------- dropdown panels ---------- */
+.akh-panel,
+.akh-more-panel,
+.akh-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(15, 40, 80, 0.22);
+  padding: 6px;
+  z-index: 60;
+  min-width: 200px;
+  color: #1f2937;
+}
+.akh-more-panel {
+  max-height: 70vh;
+  overflow-y: auto;
+  min-width: 240px;
+}
+.akh-more-group + .akh-more-group {
+  border-top: 1px solid #eef1f6;
+  margin-top: 4px;
+  padding-top: 4px;
+}
+.akh-more-head {
+  display: block;
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: none;
+  font: inherit;
+  font-weight: 700;
+  font-size: 13.5px;
+  color: #111827;
+  padding: 9px 10px 5px;
+  cursor: pointer;
+  border-radius: 6px;
+}
+.akh-more-head:hover { background: #f1f5fb; }
+.akh-panel-group { padding: 2px 0; }
+.akh-panel-title {
+  font-size: 11.5px;
+  font-weight: 700;
+  color: #8a94a6;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  padding: 8px 10px 4px;
+}
+.akh-panel-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: none;
+  font: inherit;
+  font-size: 13.5px;
+  color: #1f2937;
+  padding: 8px 10px;
+  border-radius: 7px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.akh-panel-item:hover { background: #f1f5fb; }
+.akh-panel-item.active { color: var(--kv-blue); font-weight: 700; }
+
+/* ---------- right side ---------- */
+.akh-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+  margin-left: auto;
+}
+.akh-drop { position: relative; }
+.akh-drop .akh-dropdown { left: auto; right: 0; }
+
+.akh-branch-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255, 255, 255, 0.14);
+  border: none;
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+  white-space: nowrap;
+}
+.akh-branch-btn:hover { background: rgba(255, 255, 255, 0.22); }
+
+.akh-pos-btn {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  background: #fff;
+  color: var(--kv-blue);
+  border: none;
+  padding: 9px 14px;
+  border-radius: 8px;
+  font-size: 13.5px;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: inherit;
+  white-space: nowrap;
+}
+.akh-pos-btn:hover { background: #eaf2fd; }
+
+.akh-icon-btn {
+  border: none;
+  background: transparent;
+  border-radius: 8px;
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  padding: 7px;
+  font-family: inherit;
+}
+.akh-icon-btn:hover, .akh-icon-btn.on { background: rgba(255, 255, 255, 0.18); }
+
+.akh-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.55);
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  font-weight: 800;
+  font-size: 14px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: inherit;
+}
+.akh-avatar:hover { background: rgba(255, 255, 255, 0.32); }
+
+/* ---------- settings panel ---------- */
+.akh-settings-panel { min-width: 280px; padding: 8px; }
+.akh-settings-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: none;
+  font: inherit;
+  padding: 9px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  color: #1f2937;
+}
+.akh-settings-item:hover { background: #f1f5fb; }
+.akh-settings-item > span { display: flex; flex-direction: column; gap: 1px; }
+.akh-settings-title { font-size: 13.5px; font-weight: 700; }
+.akh-settings-item small { font-size: 12px; color: #8a94a6; }
+
+/* ---------- user dropdown (hình 2) ---------- */
+.akh-user-dropdown { padding: 0; min-width: 264px; overflow: hidden; }
+.akh-user-panel { padding: 14px 16px 12px; }
+.akh-user-name {
+  display: block;
+  background: none;
+  border: none;
+  font: inherit;
+  font-size: 15px;
+  font-weight: 700;
+  color: #111827;
+  cursor: pointer;
+  padding: 0;
+  text-align: left;
+}
+.akh-user-name:hover { color: var(--kv-blue); }
+.akh-2fa {
+  font-size: 12.5px;
+  margin-top: 3px;
+  color: #e8890c;
+}
+.akh-2fa.on { color: #16a34a; }
+.akh-sep { border-top: 1px solid #eef1f6; margin: 10px -16px; }
+.akh-user-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  width: 100%;
+  background: none;
+  border: none;
+  font: inherit;
+  font-size: 13.5px;
+  color: #1f2937;
+  padding: 9px 0;
+  cursor: pointer;
+  text-align: left;
+}
+.akh-user-row:hover { color: var(--kv-blue); }
+.akh-user-row.akh-static { cursor: default; }
+.akh-user-row.akh-static:hover { color: #1f2937; }
+.akh-user-row .akh-muted { color: #6b7280; }
+.akh-row-right { display: flex; align-items: center; gap: 2px; color: #1f2937; }
+.akh-user-branch span { display: flex; flex-direction: column; gap: 1px; }
+.akh-user-branch small { font-size: 12px; color: #8a94a6; }
+.akh-logout {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  background: none;
+  border: none;
+  font: inherit;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #dc2626;
+  padding: 10px 0 2px;
+  cursor: pointer;
+}
+.akh-logout:hover { text-decoration: underline; }
+
+/* toggle switch */
+.akh-switch {
+  width: 38px;
+  height: 22px;
+  border-radius: 999px;
+  border: none;
+  background: #cbd5e1;
+  position: relative;
+  cursor: pointer;
+  transition: background 0.15s;
+  flex-shrink: 0;
+}
+.akh-switch.on { background: var(--kv-blue); }
+.akh-switch-dot {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #fff;
+  transition: left 0.15s;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+}
+.akh-switch.on .akh-switch-dot { left: 19px; }
+
+@media (max-width: 900px) {
+  .akh-burger { display: flex; }
+  .akh-nav, .akh-measure { display: none; }
+  .akh-hide-md { display: none; }
+}
+@media (max-width: 640px) {
+  .akh-hide-sm { display: none; }
+  .akh-logo-text { font-size: 15px; }
+}

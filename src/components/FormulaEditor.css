@@ -1,0 +1,69 @@
+.fe-row {
+  display: flex; align-items: center; gap: 8px; flex-wrap: wrap;
+}
+.fe-eq { font-size: 13.5px; color: var(--text-2); white-space: nowrap; }
+
+.fe-select { position: relative; min-width: 170px; flex: 1; }
+.fe-select-btn {
+  width: 100%; display: flex; align-items: center; justify-content: space-between;
+  gap: 8px; text-align: left; cursor: pointer; background: #fff;
+}
+.fe-select-btn.placeholder .fe-select-label { color: var(--muted-2); }
+.fe-select-label { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.fe-drop {
+  position: absolute; top: calc(100% + 6px); left: 0; right: 0; z-index: 170;
+  background: #fff; border: 1px solid var(--border-soft); border-radius: 10px;
+  box-shadow: var(--shadow-pop); overflow: hidden; min-width: 210px;
+}
+.fe-search { padding: 8px; border-bottom: 1px solid var(--border-soft); }
+.fe-search .kv-input { width: 100%; }
+.fe-opts { max-height: 210px; overflow-y: auto; padding: 5px; }
+.fe-opt {
+  display: flex; align-items: center; justify-content: space-between;
+  width: 100%; background: none; border: none; padding: 9px 11px; border-radius: 7px;
+  font-size: 13.5px; color: var(--text-2); cursor: pointer; font-family: var(--font); text-align: left;
+}
+.fe-opt:hover { background: #f2f5f9; }
+.fe-opt.sel { background: var(--kv-blue-light); color: var(--kv-blue); font-weight: 600; }
+.fe-noopt { padding: 12px; text-align: center; color: var(--muted-2); font-size: 13px; }
+
+.fe-op { display: inline-flex; gap: 6px; }
+.fe-opbtn {
+  width: 32px; height: 32px; border-radius: 8px; cursor: pointer;
+  border: 1px solid var(--border-soft); background: #fff; color: var(--muted-2);
+  display: inline-flex; align-items: center; justify-content: center;
+}
+.fe-opbtn.on { background: var(--kv-blue); border-color: var(--kv-blue); color: #fff; }
+
+.fe-amount { width: 130px; text-align: right; }
+
+.fe-unit {
+  display: inline-flex; border: 1px solid var(--border-soft); border-radius: 8px; overflow: hidden;
+}
+.fe-unit button {
+  border: none; background: #fff; padding: 8px 12px; cursor: pointer;
+  font-size: 12.5px; color: var(--muted-2); font-family: var(--font);
+}
+.fe-unit button.on { background: var(--kv-blue); color: #fff; font-weight: 600; }
+
+.fe-check {
+  display: flex; align-items: center; gap: 8px; flex-wrap: wrap;
+  font-size: 13.5px; color: var(--text-2); cursor: pointer; margin-top: 12px;
+}
+.fe-check input[type="checkbox"] { width: 16px; height: 16px; accent-color: var(--kv-blue); }
+.fe-roundsel {
+  border: none; border-bottom: 1px dashed var(--muted-2); background: none;
+  color: var(--kv-blue); font-size: 13.5px; cursor: pointer; font-family: var(--font);
+  padding: 2px 0;
+}
+
+.fe-info { position: relative; display: inline-flex; color: var(--muted-2); cursor: help; }
+.fe-info:hover { color: var(--kv-blue); }
+.fe-tooltip {
+  display: none; position: absolute; bottom: calc(100% + 8px); left: 50%;
+  transform: translateX(-50%); width: 290px;
+  background: #1f2937; color: #fff; font-size: 12.5px; line-height: 1.55;
+  padding: 10px 13px; border-radius: 8px; z-index: 180; font-weight: 400;
+  box-shadow: 0 8px 24px rgba(0,0,0,.25); white-space: normal;
+}
+.fe-info:hover .fe-tooltip { display: block; }

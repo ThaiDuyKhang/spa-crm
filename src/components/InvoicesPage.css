@@ -1,0 +1,153 @@
+/* Trang Hóa đơn kiểu KiotViet */
+.inv-table { min-width: 1020px; }
+
+.inv-search { position: relative; }
+.inv-search .kv-input { padding-right: 58px; }
+.inv-search-clear {
+  position: absolute;
+  right: 32px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #c3ccd8;
+  border: none;
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  cursor: pointer;
+  padding: 0;
+}
+.inv-search-clear:hover { background: var(--muted); }
+.inv-search-filter {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--muted-2);
+  display: inline-flex;
+}
+
+/* expanded row */
+.inv-row { cursor: pointer; }
+.inv-row.expanded { background: var(--kv-blue-lighter); }
+.inv-row.expanded td { border-bottom: none; }
+.inv-row.expanded td:first-child {
+  border-left: 1.5px solid var(--kv-blue);
+  border-top: 1.5px solid var(--kv-blue);
+}
+.inv-row.expanded td { border-top: 1.5px solid var(--kv-blue); }
+.inv-row.expanded td:last-child { border-right: 1.5px solid var(--kv-blue); }
+.inv-detail-row td {
+  border-left: 1.5px solid var(--kv-blue);
+  border-right: 1.5px solid var(--kv-blue);
+  border-bottom: 1.5px solid var(--kv-blue);
+  padding: 0 !important;
+  background: #fff;
+}
+.inv-detail-row:hover td { background: #fff; }
+.inv-detail { padding: 4px 18px 18px; }
+.inv-detail .loc-detail-tabs { margin-bottom: 14px; }
+
+/* overview tab */
+.inv-ov-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+.inv-ov-cust { display: flex; align-items: center; gap: 8px; }
+.inv-ov-custname { font-size: 16px; font-weight: 700; }
+.inv-ov-ext { color: var(--kv-blue); cursor: pointer; }
+.inv-ov-branch {
+  text-align: right;
+  font-size: 12.5px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+.inv-ov-meta {
+  display: flex;
+  gap: 22px;
+  margin-bottom: 12px;
+  font-size: 13.5px;
+  color: var(--text-2);
+}
+.inv-ov-meta-item { display: inline-flex; align-items: center; gap: 7px; }
+.inv-ov-meta-item svg { color: var(--muted); }
+
+.inv-ov-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0 24px;
+  margin-bottom: 14px;
+}
+.inv-ov-cell { border-bottom: 1px solid var(--border-soft); padding: 8px 0; }
+.inv-ov-label { font-size: 12px; color: var(--muted); margin-bottom: 3px; }
+.inv-ov-value { font-size: 13.5px; color: var(--text); }
+.inv-ov-value.dim { color: var(--muted-2); }
+
+.inv-notebox {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  margin-bottom: 14px;
+  overflow: hidden;
+}
+.inv-notebox-title { font-size: 13.5px; font-weight: 700; padding: 10px 14px 0; }
+.inv-notebox-body {
+  text-align: center;
+  color: var(--text-2);
+  font-size: 13.5px;
+  padding: 22px 14px 30px;
+}
+
+.inv-items {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13.5px;
+  margin-bottom: 6px;
+}
+.inv-items thead th {
+  background: #f4f6f9;
+  font-weight: 600;
+  color: var(--text-2);
+  text-align: left;
+  padding: 9px 12px;
+  white-space: nowrap;
+}
+.inv-items thead th:first-child { border-radius: 8px 0 0 8px; }
+.inv-items thead th:last-child { border-radius: 0 8px 8px 0; }
+.inv-items tbody td {
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--border-soft);
+  color: var(--text-2);
+  vertical-align: top;
+}
+.inv-item-name { font-weight: 500; color: var(--text); margin-bottom: 4px; }
+.inv-item-staff { font-size: 12.5px; color: var(--muted); line-height: 1.7; }
+.inv-item-staff .inv-edit { color: var(--muted-2); vertical-align: -1px; cursor: pointer; }
+.inv-item-staff .inv-edit:hover { color: var(--kv-blue); }
+
+.inv-totals {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 5px;
+  padding: 10px 4px 0;
+  font-size: 13.5px;
+}
+.inv-total-row {
+  display: flex;
+  justify-content: space-between;
+  width: 300px;
+  color: var(--text-2);
+}
+.inv-total-row.grand { font-weight: 700; color: var(--text); font-size: 14px; }
+
+@media (max-width: 900px) {
+  .inv-ov-grid { grid-template-columns: 1fr 1fr; }
+  .inv-ov-head { flex-direction: column; }
+  .inv-ov-branch { text-align: left; }
+}

@@ -1,0 +1,113 @@
+/* DateRangePicker kiểu KiotViet */
+.drp-wrap {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  z-index: 130;
+}
+.drp {
+  background: #fff;
+  border: 1px solid var(--border-soft);
+  border-radius: 12px;
+  box-shadow: var(--shadow-pop);
+  padding: 16px 20px;
+  width: 620px;
+  max-width: calc(100vw - 40px);
+}
+.drp-head {
+  font-size: 14.5px;
+  color: var(--text-2);
+  margin-bottom: 14px;
+}
+.drp-head b { color: var(--text); font-weight: 700; }
+
+.drp-calendars { display: flex; gap: 32px; }
+.drp-panel { flex: 1; min-width: 0; }
+.drp-panel-head {
+  display: flex;
+  align-items: center;
+  margin-bottom: 6px;
+}
+.drp-panel-title {
+  color: var(--kv-blue);
+  font-weight: 600;
+  font-size: 14px;
+}
+.drp-nav { margin-left: auto; display: flex; gap: 2px; }
+.drp-nav button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--muted);
+  padding: 5px;
+  border-radius: 6px;
+  display: inline-flex;
+}
+.drp-nav button:hover { background: #eef1f5; color: var(--text); }
+
+.drp-week {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  text-align: center;
+  font-size: 12px;
+  color: var(--muted);
+  font-weight: 600;
+}
+.drp-week span { padding: 7px 0; }
+
+.drp-days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+}
+.drp-day {
+  aspect-ratio: 1 / 1;
+  border: none;
+  background: none;
+  font-size: 13px;
+  font-family: var(--font);
+  color: var(--text-2);
+  cursor: pointer;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1px;
+  padding: 0;
+}
+.drp-day:hover:not(.sel) { background: #edf2f9; }
+.drp-day.other { color: #c6cfdb; }
+.drp-day.in-range { background: var(--kv-blue-light); border-radius: 6px; }
+.drp-day.sel {
+  background: var(--kv-blue);
+  color: #fff;
+  font-weight: 700;
+}
+
+.drp-foot {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+/* input "Lựa chọn khác" khi đang mở / đã chọn */
+.tf-input-active .kv-input {
+  border-color: var(--kv-blue);
+  box-shadow: 0 0 0 2px rgba(15, 108, 222, 0.12);
+}
+.tf-custom { position: relative; flex: 1; min-width: 0; display: flex; }
+.tf-custom-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+.tf-custom.tf-disabled .kv-input {
+  background: #f4f5f7;
+  color: var(--muted);
+}
+
+@media (max-width: 680px) {
+  .drp { width: 330px; padding: 14px; }
+  .drp-calendars { flex-direction: column; gap: 18px; }
+}

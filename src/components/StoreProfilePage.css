@@ -1,0 +1,203 @@
+.sp-page {
+  display: flex;
+  gap: 18px;
+  align-items: flex-start;
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 8px 4px 24px;
+  font-family: inherit;
+}
+
+/* ---------- sidebar ---------- */
+.sp-side {
+  width: 258px;
+  flex-shrink: 0;
+  background: #fff;
+  border-radius: 12px;
+  padding: 10px;
+  box-shadow: 0 1px 3px rgba(15, 40, 80, 0.06);
+}
+.sp-side-sec { margin-bottom: 6px; }
+.sp-side-title {
+  font-size: 12.5px;
+  color: #6b7280;
+  padding: 10px 10px 6px;
+}
+.sp-side-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: none;
+  font: inherit;
+  font-size: 13.5px;
+  color: #374151;
+  padding: 9px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.sp-side-item:hover { background: #f3f6fb; }
+.sp-side-item.active {
+  background: #e8f1fd;
+  color: #0f6cde;
+  font-weight: 700;
+}
+.sp-side-item svg { flex-shrink: 0; }
+.sp-badge {
+  margin-left: auto;
+  background: #dc2626;
+  color: #fff;
+  font-size: 10.5px;
+  font-weight: 700;
+  border-radius: 6px;
+  padding: 1px 6px;
+}
+
+/* ---------- main ---------- */
+.sp-main {
+  flex: 1;
+  min-width: 0;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(15, 40, 80, 0.06);
+  overflow: hidden;
+}
+.sp-tabs {
+  display: flex;
+  gap: 24px;
+  padding: 0 24px;
+  border-bottom: 1px solid #eef1f6;
+}
+.sp-tab {
+  background: none;
+  border: none;
+  font: inherit;
+  font-size: 14px;
+  color: #6b7280;
+  padding: 14px 2px 12px;
+  cursor: pointer;
+  position: relative;
+}
+.sp-tab.active { color: #0f6cde; font-weight: 700; }
+.sp-tab.active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: 2px;
+  background: #0f6cde;
+  border-radius: 2px;
+}
+.sp-card { padding: 20px 24px 24px; }
+.sp-sec-title {
+  font-size: 14.5px;
+  font-weight: 700;
+  color: #111827;
+  margin: 4px 0 6px;
+}
+.sp-sec-title:not(:first-child) { margin-top: 22px; }
+.sp-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 32px;
+}
+.sp-info-cell { padding: 10px 0 2px; }
+.sp-info-label {
+  font-size: 12.5px;
+  color: #8a94a6;
+  margin-bottom: 5px;
+}
+.sp-info-value {
+  font-size: 13.5px;
+  color: #111827;
+  padding-bottom: 9px;
+  border-bottom: 1px solid #eef1f6;
+  word-break: break-word;
+}
+.sp-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 22px;
+}
+
+@media (max-width: 1024px) {
+  .sp-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 760px) {
+  .sp-page { flex-direction: column; }
+  .sp-side { width: 100%; }
+  .sp-grid { grid-template-columns: 1fr; }
+}
+
+/* ---------- modal sửa thông tin ---------- */
+.sp-modal-sec {
+  font-size: 14px;
+  font-weight: 700;
+  color: #111827;
+  margin: 6px 0 10px;
+}
+.sp-modal-sec:not(:first-child) { margin-top: 18px; }
+.sp-page .acc-field { display: block; margin-bottom: 14px; }
+.sp-page .acc-field-label {
+  display: block;
+  font-size: 12.5px;
+  color: #6b7280;
+  margin-bottom: 6px;
+}
+.sp-page .acc-field input,
+.sp-page .acc-field select,
+.sp-page .acc-field textarea {
+  width: 100%;
+  border: 1px solid #d7dce4;
+  border-radius: 9px;
+  padding: 10px 12px;
+  font: inherit;
+  font-size: 13.5px;
+  color: #111827;
+  background: #fff;
+  box-sizing: border-box;
+}
+.sp-page .acc-field input:focus,
+.sp-page .acc-field select:focus {
+  outline: none;
+  border-color: #0f6cde;
+  box-shadow: 0 0 0 3px rgba(15, 108, 222, 0.12);
+}
+.sp-page .acc-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 16px;
+}
+.sp-page .acc-err { color: #dc2626; font-size: 13px; margin-top: 4px; }
+.sp-info-value.empty { color: #9aa3b2; }
+
+/* ---------- tab chi nhánh ---------- */
+.sp-branch-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+  flex-wrap: wrap;
+}
+.sp-icon-btn {
+  border: none;
+  background: #f1f5fb;
+  color: #4b5563;
+  border-radius: 7px;
+  padding: 7px;
+  cursor: pointer;
+  display: inline-flex;
+  margin-left: 6px;
+}
+.sp-icon-btn:hover { background: #e2eaf6; color: #0f6cde; }
+.sp-icon-btn.danger:hover { background: #fde8e8; color: #dc2626; }
+.cd-muted { color: #8a94a6; font-size: 12.5px; }
+
+@media (max-width: 640px) {
+  .sp-page .acc-grid { grid-template-columns: 1fr; }
+}

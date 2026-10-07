@@ -1,0 +1,99 @@
+/* ---------- Tạo bảng giá (PriceListModal) ---------- */
+.pl-modal { max-width: 800px; width: calc(100vw - 60px); }
+.pl-body { max-height: calc(100vh - 250px); overflow-y: auto; }
+.pl-field { margin-bottom: 14px; }
+.pl-field .kv-label { display: block; margin-bottom: 6px; font-size: 13px; color: var(--text-2); }
+.pl-full { width: 100%; }
+.kv-input-error { border-color: #ef4444 !important; box-shadow: 0 0 0 2px rgba(239,68,68,.12); }
+.pl-error { color: #ef4444; font-size: 12.5px; margin-top: 5px; }
+
+.pl-collapse {
+  border: 1px solid var(--border-soft); border-radius: 10px;
+  margin-bottom: 12px; overflow: visible;
+}
+.pl-collapse-head {
+  width: 100%; display: flex; align-items: center; justify-content: space-between;
+  background: #fff; border: none; padding: 13px 16px; cursor: pointer; font-family: var(--font);
+  border-radius: 10px;
+}
+.pl-collapse-head:hover { background: #f8fafc; }
+.pl-collapse-text { display: flex; flex-direction: column; align-items: flex-start; gap: 3px; text-align: left; }
+.pl-collapse-title { font-size: 14px; font-weight: 600; color: var(--text); }
+.pl-collapse-desc { font-size: 12.5px; color: var(--muted-2); }
+.pl-collapse-body { padding: 4px 16px 16px; border-top: 1px solid var(--border-soft); }
+
+/* hiệu lực */
+.pl-eff-row { display: flex; align-items: center; gap: 10px; margin: 12px 0; flex-wrap: wrap; }
+.pl-eff-label { font-size: 13px; color: var(--text-2); min-width: 58px; }
+.pl-eff-sep { font-size: 13px; color: var(--muted-2); }
+.pl-status-row { display: flex; align-items: center; gap: 18px; }
+
+/* datetime field */
+.dt-wrap { position: relative; display: inline-flex; align-items: center; }
+.dt-input { padding-right: 62px; width: 190px; }
+.dt-icon {
+  position: absolute; right: 34px; top: 50%; transform: translateY(-50%);
+  background: none; border: none; cursor: pointer; color: var(--muted-2);
+  padding: 5px; border-radius: 6px; display: inline-flex;
+}
+.dt-icon-2 { right: 6px; }
+.dt-icon:hover { background: #eef1f5; color: var(--text); }
+.dt-cal { z-index: 200; }
+.dt-cal .drp { width: 620px; }
+.dt-time { position: absolute; top: calc(100% + 6px); right: 0; z-index: 200; }
+
+/* check dropdown (Tháng/Ngày) */
+.cd-wrap { position: relative; display: block; }
+.cd-btn {
+  width: 100%; display: flex; align-items: center; justify-content: space-between;
+  cursor: pointer; background: #fff; text-align: left;
+}
+.cd-btn.placeholder { color: var(--muted-2); }
+.cd-label { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.cd-drop {
+  position: absolute; top: calc(100% + 6px); left: 0; right: 0; z-index: 170;
+  background: #fff; border: 1px solid var(--border-soft); border-radius: 10px;
+  box-shadow: var(--shadow-pop); max-height: 220px; overflow-y: auto; padding: 6px;
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px;
+}
+.cd-opt {
+  display: flex; align-items: center; gap: 8px; padding: 8px 10px;
+  font-size: 13px; color: var(--text-2); cursor: pointer; border-radius: 7px;
+}
+.cd-opt:hover { background: #f2f5f9; }
+.cd-opt input { accent-color: var(--kv-blue); }
+
+/* chips Thứ */
+.pl-chips { display: flex; gap: 8px; flex-wrap: wrap; }
+.pl-chip {
+  border: 1px solid var(--border-soft); background: #fff; border-radius: 999px;
+  padding: 7px 14px; font-size: 13px; color: var(--text-2); cursor: pointer; font-family: var(--font);
+}
+.pl-chip:hover { border-color: var(--kv-blue); }
+.pl-chip.on { background: var(--kv-blue-light); border-color: var(--kv-blue); color: var(--kv-blue); font-weight: 600; }
+
+/* khung giờ */
+.pl-timerow { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+.pl-timerow .ti-wrap { flex: 1; }
+.pl-trash {
+  background: none; border: 1px solid var(--border-soft); border-radius: 8px;
+  width: 34px; height: 34px; cursor: pointer; color: var(--muted-2);
+  display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.pl-trash:hover { background: #fef2f2; color: #ef4444; border-color: #fecaca; }
+.pl-addtime { display: inline-flex; align-items: center; gap: 5px; margin-top: 2px; }
+
+/* phạm vi áp dụng */
+.pl-scope {
+  border: 1px solid var(--border-soft); border-radius: 10px;
+  padding: 14px 16px; margin-bottom: 12px;
+}
+.pl-scope-title { font-size: 14px; font-weight: 600; color: var(--text); margin-bottom: 10px; }
+.pl-scope .kv-radio { margin-bottom: 8px; }
+.pl-scope-input { margin: 6px 0 4px 26px; }
+.pl-scope-input .kv-input { width: 100%; }
+
+@media (max-width: 720px) {
+  .pl-modal { width: calc(100vw - 24px); }
+  .dt-input { width: 170px; }
+}
